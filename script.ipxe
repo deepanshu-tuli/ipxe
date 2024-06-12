@@ -1,0 +1,12 @@
+#!ipxe
+
+dhcp
+set base-url http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot
+
+# Boot the Ubuntu installer kernel and initrd
+kernel ${base-url}/ubuntu-installer/amd64/linux auto=true priority=critical vga=788 --- quiet
+initrd ${base-url}/ubuntu-installer/amd64/initrd.gz
+
+# Boot the installer
+boot
+
